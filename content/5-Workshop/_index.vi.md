@@ -12,15 +12,15 @@ Backend Docker trên EC2 Auto Scaling, Amazon DocumentDB, API Gateway, Amplify, 
 
 | Thông tin | Giá trị |
 | --- | --- |
-| Sinh viên | Trần Thanh Hải |
-| MSSV | 2280600824 |
+| Sinh viên | Trần Thanh Hải<br>Nguyễn Thành Đạt |
+| MSSV | 2280600824<br>2280600620 |
 | Dự án | VibeMatch - Web dating application |
 | AWS Region | ap-southeast-1 (Singapore) |
 | Phạm vi workshop | Triển khai backend, database, frontend access, DNS/HTTPS, WAF và kiểm thử |
 
 > Mục tiêu: Tài liệu này mô phỏng cấu trúc workshop kiểu FCJ: overview, prerequisite, các lab triển khai, kiểm thử và cleanup. Những vị trí cần ảnh màn hình đã được đánh dấu màu đỏ để bổ sung sau.
 
-[CHÈN ẢNH: Ảnh sơ đồ kiến trúc tổng quan VibeMatch trên AWS]
+![Sơ đồ kiến trúc tổng quan VibeMatch trên AWS](/images/5-Workshop/vibematch-architecture.jpg)
 
 ## Nội dung
 

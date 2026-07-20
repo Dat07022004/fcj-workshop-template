@@ -23,4 +23,4 @@ Workshop này hướng dẫn triển khai ứng dụng VibeMatch lên AWS theo m
 | Route 53 và ACM | Quản lý domain, DNS record và certificate HTTPS. |
 | AWS WAF | Bảo vệ frontend khỏi request độc hại thông qua Amplify Firewall. |
 
-[CHÈN ẢNH: Ảnh sơ đồ kiến trúc frontend, API Gateway, ALB, EC2 Auto Scaling, DocumentDB và WAF]
+![Sơ đồ kiến trúc frontend, API Gateway, ALB, EC2 Auto Scaling, DocumentDB và WAF](/images/5-Workshop/5.1-introduction/architecture-overview.jpg)

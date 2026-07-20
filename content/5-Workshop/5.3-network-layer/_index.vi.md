@@ -44,12 +44,12 @@ pre: " <b> 5.3. </b> "
 
 * `docdb-sg` chỉ nhận port 27017 từ `ec2-backend-sg`.
 
-[CHÈN ẢNH: Ảnh VPC đã tạo và bật DNS support/hostnames]
+![VPC đã tạo và bật DNS support/hostnames](/images/5-Workshop/5.3-network-layer/vpc-details.png)
 
-[CHÈN ẢNH: Ảnh danh sách 6 subnets public/app/db]
+![Danh sách subnets, route tables và network connections](/images/5-Workshop/5.3-network-layer/subnets-route-tables-network.png)
 
-[CHÈN ẢNH: Ảnh route tables của public và private app subnets]
+![NAT Gateways cho private app subnets](/images/5-Workshop/5.3-network-layer/nat-gateways.png)
 
-[CHÈN ẢNH: Ảnh NAT Gateway/VPC endpoints]
+![VPC endpoints đã tạo](/images/5-Workshop/5.3-network-layer/vpc-endpoints.png)
 
-[CHÈN ẢNH: Ảnh security group inbound rules]
+![Security group inbound rules cho VPC endpoint](/images/5-Workshop/5.3-network-layer/endpoint-security-group.png)

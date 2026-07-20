@@ -52,10 +52,4 @@ $DATABASE_URL
 
 * `DATABASE_URL` có `tls=true`, `tlsCAFile`, `replicaSet=rs0`, `retryWrites=false`, `authSource=admin`, `authMechanism=SCRAM-SHA-1`.
 
-[CHÈN ẢNH: Ảnh DocumentDB subnet group]
-
-[CHÈN ẢNH: Ảnh cluster `webdating-docdb` ở trạng thái available]
-
-[CHÈN ẢNH: Ảnh writer và reader replica]
-
-[CHÈN ẢNH: Ảnh secret DATABASE_URL đã tạo trong Secrets Manager]
+![DocumentDB cluster webdating-docdb và writer/reader instances ở trạng thái available](/images/5-Workshop/5.4-documentdb/documentdb-cluster.png)

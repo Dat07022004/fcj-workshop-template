@@ -59,14 +59,12 @@ curl.exe "http://webdating-backend-alb-218383004.ap-southeast-1.elb.amazonaws.co
 
 * Docker container `webdating-backend` chạy ổn định, không restart loop.
 
-[CHÈN ẢNH: Ảnh ECR repository có image backend latest]
+![ECR repository có image backend latest](/images/5-Workshop/5.5-backend-autoscaling/ecr-repository.png)
 
-[CHÈN ẢNH: Ảnh IAM role và instance profile của EC2]
+![Backend EC2 instance trong private subnet AZ A](/images/5-Workshop/5.5-backend-autoscaling/backend-ec2-instance-a.png)
 
-[CHÈN ẢNH: Ảnh Launch Template đã tạo]
+![Backend EC2 instance trong private subnet AZ B](/images/5-Workshop/5.5-backend-autoscaling/backend-ec2-instance-b.png)
 
-[CHÈN ẢNH: Ảnh Auto Scaling Group desired capacity 2]
+![Launch Template đã tạo cho backend](/images/5-Workshop/5.5-backend-autoscaling/launch-template.png)
 
-[CHÈN ẢNH: Ảnh Target Group có 2 EC2 healthy]
-
-[CHÈN ẢNH: Ảnh log Docker backend kết nối DocumentDB thành công]
+![Auto Scaling Group desired capacity 2](/images/5-Workshop/5.5-backend-autoscaling/auto-scaling-group.png)

@@ -39,8 +39,3 @@ docker --version
 
 * Có quyền truy cập AWS Console và có thể tạo service trong region `ap-southeast-1`.
 
-[CHÈN ẢNH: Ảnh AWS CLI đã cấu hình thành công]
-
-[CHÈN ẢNH: Ảnh Docker build backend image]
-
-[CHÈN ẢNH: Ảnh Clerk dashboard hoặc phần key dùng cho môi trường test]

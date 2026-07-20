@@ -45,10 +45,6 @@ curl.exe -i -X OPTIONS "$API_GATEWAY_URL/api/users/me" -H "Origin: https://vibem
 
 * Protected route thiếu token trả 401 nhưng vẫn có `access-control-allow-origin` đúng.
 
-[CHÈN ẢNH: Ảnh API Gateway HTTP API đã tạo]
+![API Gateway HTTP API đã tạo](/images/5-Workshop/5.6-api-gateway/api-gateway-http-api.png)
 
-[CHÈN ẢNH: Ảnh integration tới ALB]
-
-[CHÈN ẢNH: Ảnh routes ANY và OPTIONS]
-
-[CHÈN ẢNH: Ảnh CORS configuration cho `https://vibematch.cloud`]
+![Routes ANY và OPTIONS cho backend HTTP API](/images/5-Workshop/5.6-api-gateway/api-gateway-routes.png)
