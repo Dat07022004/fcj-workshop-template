@@ -1,4 +1,4 @@
----
+﻿---
 title: "Workshop"
 date: 2024-01-01
 weight: 5
@@ -6,28 +6,44 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+## Triển Khai Ứng Dụng Vibematch Trên Aws
 
+Backend Docker trên EC2 Auto Scaling, Amazon DocumentDB, API Gateway, Amplify, Route 53, ACM và WAF
 
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint
+| Thông tin | Giá trị |
+| --- | --- |
+| Sinh viên | Trần Thanh Hải |
+| MSSV | 2280600824 |
+| Dự án | VibeMatch - Web dating application |
+| AWS Region | ap-southeast-1 (Singapore) |
+| Phạm vi workshop | Triển khai backend, database, frontend access, DNS/HTTPS, WAF và kiểm thử |
 
-#### Tổng quan
+> Mục tiêu: Tài liệu này mô phỏng cấu trúc workshop kiểu FCJ: overview, prerequisite, các lab triển khai, kiểm thử và cleanup. Những vị trí cần ảnh màn hình đã được đánh dấu màu đỏ để bổ sung sau.
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.
+[CHÈN ẢNH: Ảnh sơ đồ kiến trúc tổng quan VibeMatch trên AWS]
 
-Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.
+## Nội dung
 
-Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).
-+ **Gateway** - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)
-+ **Interface** - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.
+1. [Giới thiệu workshop](5.1-introduction/)
 
-#### Nội dung
+2. [Chuẩn bị môi trường](5.2-prerequisites/)
 
-1. [Tổng quan về workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (làm thêm)](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+3. [Tạo VPC, subnet và network layer](5.3-network-layer/)
+
+4. [Tạo Amazon DocumentDB](5.4-documentdb/)
+
+5. [Deploy backend Docker lên EC2 Auto Scaling](5.5-backend-autoscaling/)
+
+6. [Tạo API Gateway cho frontend gọi backend](5.6-api-gateway/)
+
+7. [Deploy frontend trên AWS Amplify](5.7-amplify-frontend/)
+
+8. [Cấu hình Route 53, ACM và HTTPS cho Socket.IO](5.8-route53-acm-socket/)
+
+9. [Bật WAF cho frontend](5.9-waf/)
+
+10. [Kiểm thử hệ thống](5.10-system-testing/)
+
+11. [Cleanup và tối ưu chi phí](5.11-cleanup-cost/)
+
+12. [Kết luận](5.12-conclusion/)
