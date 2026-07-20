@@ -13,7 +13,7 @@ pre: " <b> 2. </b> "
 
 | Item | Details |
 | --- | --- |
-| Student | Tran Thanh Hai - 2280600824 - 22DTHC5 |
+| Student | Tran Thanh Hai - 2280600824 - 22DTHC5<br>Nguyen Thanh Dat - 2280600620 - 22DTHC5 |
 | Major | Information Technology - Software Engineering |
 | Internship Unit | Amazon Web Services Vietnam Co., Ltd. |
 | Project Scope | Deploy backend, database, frontend, API access, realtime socket, DNS, HTTPS, and WAF protection on AWS. |

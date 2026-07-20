@@ -13,7 +13,7 @@ pre: " <b> 2. </b> "
 
 | Mục | Chi tiết |
 | --- | --- |
-| Sinh viên | Trần Thanh Hải - 2280600824 - 22DTHC5 |
+| Sinh viên | Trần Thanh Hải - 2280600824 - 22DTHC5<br>Nguyễn Thanh Đạt - 2280600620 - 22DTHC5 |
 | Chuyên ngành | Công nghệ thông tin - Kỹ thuật phần mềm |
 | Đơn vị thực tập | Công ty TNHH Amazon Web Services Việt Nam |
 | Phạm vi dự án | Triển khai backend, cơ sở dữ liệu, frontend, truy cập API, realtime socket, DNS, HTTPS và bảo vệ WAF trên AWS. |
