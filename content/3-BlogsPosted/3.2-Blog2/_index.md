@@ -1,31 +1,30 @@
 ---
-title: "Blog 2"
+title: "Blog 2 - Processing Amazon S3 objects at scale with AWS Step Functions Distributed Map"
 date: 2024-01-01
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+This blog discusses how AWS Step Functions Distributed Map can simplify large-scale processing of Amazon S3 objects. In modern data systems, S3 often stores application logs, customer data, machine learning datasets, reports, and event data. As the number of objects grows, the main challenge becomes processing thousands or millions of objects reliably, in parallel, and with less operational overhead.
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+The key idea is combining S3 prefix iteration with `LOAD_AND_FLATTEN`. With this approach, a workflow can use `S3ListObjectsV2` to find objects under a specific prefix, then read and flatten the contents of those files into individual records inside the same Map state.
 
-Key points to know:
+![AWS Step Functions Distributed Map S3 workflow](/images/3-BlogsPosted/3.2-Blog2/step-functions-distributed-map-s3.png)
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+## Main ideas
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+* Distributed Map runs many processing branches in parallel for large datasets.
+* `LOAD_AND_FLATTEN` lets Step Functions process the actual contents of S3 objects, not only object metadata.
+* Supported data formats include CSV, JSON, JSONL, and PARQUET.
+* A log analytics workflow can count `INFO`, `WARNING`, and `ERROR` records, publish CloudWatch metrics, store summaries in DynamoDB, and invoke Lambda for final aggregation.
+* Prefixes should be designed carefully, usually ending with `/`, to avoid accidentally matching unrelated objects.
+* Objects under the same prefix should use the same data format.
 
-...Image...
+## Personal takeaway
 
-...Link...
+This feature reduces the amount of custom orchestration code needed in data pipelines. Instead of separately listing objects, building manifests, reading files, parsing records, and coordinating parallel processing, several of those steps can be handled inside one Distributed Map state.
 
-...Guide...
+For serverless and event-driven systems, this makes S3 processing workflows easier to scale and operate. It is especially useful for log analysis, batch processing, data lake ingestion, reporting, and machine learning data preparation.
+
+Facebook post: [View Blog 2 on AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj/posts/2206913116740315)
