@@ -6,17 +6,13 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
+This section lists the blogs I posted to [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj).
 
-This section will list and introduce the blogs you have posted to [AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj). For example:
+###  [Blog 1 - Building AIOps for applications on Amazon Bedrock](3.1-Blog1/)
+This blog discusses how Amazon Bedrock workloads can be monitored with an AIOps architecture using CloudWatch Alarms, SNS, Lambda, Service Quotas, AWS Support API, and email notifications.
 
-###  [Blog 1 - SESSION POLICIES IN AMAZON EKS POD IDENTITY](3.1-Blog1/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+###  [Blog 2 - Processing Amazon S3 objects at scale with AWS Step Functions Distributed Map](3.2-Blog2/)
+This blog explains how Step Functions Distributed Map can process S3 objects under a prefix, read file contents with LOAD_AND_FLATTEN, and scale data workflows such as log analytics.
 
-###  [Blog 2 - ...](3.2-Blog2/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
-
-###  [Blog 3 - ...](3.3-Blog3/)
-This blog introduces the newly added session policies feature in Amazon EKS Pod Identity, which allows you to narrow IAM permissions flexibly and precisely for each pod without needing to create multiple separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+###  [Blog 3 - Amazon S3 Annotations](3.3-Blog3/)
+This blog introduces Amazon S3 annotations, a feature for attaching rich, queryable context directly to S3 objects for analytics, data lake, media, and AI workflows.
