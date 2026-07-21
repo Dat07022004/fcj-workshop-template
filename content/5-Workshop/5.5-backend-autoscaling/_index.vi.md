@@ -28,6 +28,8 @@ pre: " <b> 5.5. </b> "
 
 1. Viết `user-data.sh`: cài Docker, tải `global-bundle.pem`, đọc secrets, login ECR, pull image và chạy container `webdating-backend`.
 
+1. Cấu hình backend gửi application logs lên Amazon CloudWatch Logs thông qua log group `/webdating/backend`.
+
 1. Tạo Launch Template dùng Amazon Linux 2023, IAM instance profile, security group backend và user data.
 
 1. Tạo target group port 3000 với health check path `/api/health`.
@@ -58,6 +60,8 @@ curl.exe "http://webdating-backend-alb-218383004.ap-southeast-1.elb.amazonaws.co
 * `GET /api/health/db` trả `Database connection is healthy` và `state=connected`.
 
 * Docker container `webdating-backend` chạy ổn định, không restart loop.
+
+* CloudWatch Logs ghi nhận log backend từ các EC2 instances trong log group `/webdating/backend`.
 
 ![ECR repository có image backend latest](/images/5-Workshop/5.5-backend-autoscaling/ecr-repository.png)
 

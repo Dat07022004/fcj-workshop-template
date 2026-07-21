@@ -28,6 +28,8 @@ pre: " <b> 5.5. </b> "
 
 1. Write `user-data.sh`: install Docker, download `global-bundle.pem`, read secrets, log in to ECR, pull the image, and run the `webdating-backend` container.
 
+1. Configure the backend to send application logs to Amazon CloudWatch Logs through the `/webdating/backend` log group.
+
 1. Create a Launch Template using Amazon Linux 2023, IAM instance profile, backend security group, and user data.
 
 1. Create a target group on port 3000 with health check path `/api/health`.
@@ -58,6 +60,8 @@ curl.exe "http://webdating-backend-alb-218383004.ap-southeast-1.elb.amazonaws.co
 * `GET /api/health/db` returns `Database connection is healthy` and `state=connected`.
 
 * The Docker container `webdating-backend` runs stably without a restart loop.
+
+* CloudWatch Logs receives backend logs from the EC2 instances in the `/webdating/backend` log group.
 
 ![ECR repository with latest backend image](/images/5-Workshop/5.5-backend-autoscaling/ecr-repository.png)
 

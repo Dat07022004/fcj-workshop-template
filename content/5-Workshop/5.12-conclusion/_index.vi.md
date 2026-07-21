@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 5.12. </b> "
 ---
 
-Sau workshop, hệ thống VibeMatch đã có frontend vận hành trên AWS Amplify, REST API qua API Gateway, backend Docker chạy trên EC2 Auto Scaling sau ALB và dữ liệu lưu trên Amazon DocumentDB trong private subnet. Domain, HTTPS và WAF được cấu hình để cải thiện trải nghiệm truy cập và lớp bảo vệ frontend. Quy trình kiểm thử bằng Postman và browser xác nhận API, xác thực Clerk và kết nối database hoạt động đúng.
+Sau workshop, hệ thống VibeMatch đã có frontend vận hành trên AWS Amplify, REST API qua API Gateway, backend Docker chạy trên EC2 Auto Scaling sau ALB và dữ liệu lưu trên Amazon DocumentDB trong private subnet. Domain, HTTPS và WAF được cấu hình để cải thiện trải nghiệm truy cập và lớp bảo vệ frontend. Amazon CloudWatch được sử dụng để theo dõi logs, metrics và alarms của backend, ALB, EC2 Auto Scaling, API Gateway, DocumentDB và WAF. Quy trình kiểm thử bằng Postman, browser và CloudWatch xác nhận API, xác thực Clerk, kết nối database và trạng thái vận hành hệ thống hoạt động đúng.
 
 * FCJ workshop template: https://github.com/Dat07022004/fcj-workshop-template
 

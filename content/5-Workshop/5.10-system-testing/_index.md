@@ -30,6 +30,12 @@ pre: " <b> 5.10. </b> "
 
 1. Check that the target group has 2 healthy instances.
 
+1. Check Amazon CloudWatch Logs to confirm that the backend writes logs to the `/webdating/backend` log group.
+
+1. Check CloudWatch Metrics for API Gateway, Application Load Balancer, EC2, DocumentDB, Logs, and related services.
+
+1. Check CloudWatch Alarms for alerts such as API Gateway 5xx, ALB target 5xx, unhealthy targets, ASG low in-service instances, and DocumentDB high CPU.
+
 ### Reference Commands
 
 ```powershell
@@ -50,6 +56,8 @@ curl.exe -H "Authorization: Bearer <clerk-token>" "https://zsc1wtu6rc.execute-ap
 
 * Postman confirms that the backend API and DB connection work correctly.
 
+* CloudWatch shows the `/webdating/backend` log group, metrics for the main services, and alarms used for operational monitoring.
+
 ![VibeMatch homepage on custom domain](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-09.png)
 
 ![VibeMatch notifications page](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-10.png)
@@ -63,3 +71,9 @@ curl.exe -H "Authorization: Bearer <clerk-token>" "https://zsc1wtu6rc.execute-ap
 ![VibeMatch video call test](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-14.png)
 
 ![VibeMatch profile page](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-15.png)
+
+![CloudWatch alarms for VibeMatch monitoring](/images/5-Workshop/5.10-system-testing/cloudwatch-alarms.png)
+
+![CloudWatch backend log group](/images/5-Workshop/5.10-system-testing/cloudwatch-backend-log-group.png)
+
+![CloudWatch metrics for AWS services](/images/5-Workshop/5.10-system-testing/cloudwatch-metrics.png)

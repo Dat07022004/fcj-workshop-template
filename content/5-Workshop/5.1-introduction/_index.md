@@ -22,5 +22,6 @@ This workshop guides the deployment of the VibeMatch application on AWS using a 
 | AWS Amplify | Builds and hosts the frontend and manages production environment variables. |
 | Route 53 and ACM | Manage domains, DNS records, and HTTPS certificates. |
 | AWS WAF | Protects the frontend from malicious requests through Amplify Firewall. |
+| Amazon CloudWatch | Collects logs, metrics, and alarms from the backend, EC2 Auto Scaling, ALB, API Gateway, DocumentDB, and WAF for operational monitoring. |
 
 ![Frontend, API Gateway, ALB, EC2 Auto Scaling, DocumentDB, and WAF architecture](/images/5-Workshop/5.1-introduction/architecture-overview.jpg)

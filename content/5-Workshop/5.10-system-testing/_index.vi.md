@@ -30,6 +30,12 @@ pre: " <b> 5.10. </b> "
 
 1. Kiểm tra target group health có 2 instances healthy.
 
+1. Kiểm tra Amazon CloudWatch Logs để xác nhận backend ghi log vào log group `/webdating/backend`.
+
+1. Kiểm tra CloudWatch Metrics cho API Gateway, Application Load Balancer, EC2, DocumentDB, Logs và các dịch vụ liên quan.
+
+1. Kiểm tra CloudWatch Alarms cho các cảnh báo như API Gateway 5xx, ALB target 5xx, unhealthy targets, ASG low in-service instances và DocumentDB high CPU.
+
 ### Lệnh tham khảo
 
 ```powershell
@@ -50,6 +56,8 @@ curl.exe -H "Authorization: Bearer <clerk-token>" "https://zsc1wtu6rc.execute-ap
 
 * Postman xác nhận API backend và DB hoạt động đúng.
 
+* CloudWatch hiển thị log group `/webdating/backend`, metrics của các dịch vụ chính và danh sách alarms phục vụ giám sát vận hành.
+
 ![VibeMatch homepage on custom domain](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-09.png)
 
 ![VibeMatch notifications page](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-10.png)
@@ -63,3 +71,9 @@ curl.exe -H "Authorization: Bearer <clerk-token>" "https://zsc1wtu6rc.execute-ap
 ![VibeMatch video call test](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-14.png)
 
 ![VibeMatch profile page](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-15.png)
+
+![CloudWatch alarms for VibeMatch monitoring](/images/5-Workshop/5.10-system-testing/cloudwatch-alarms.png)
+
+![CloudWatch backend log group](/images/5-Workshop/5.10-system-testing/cloudwatch-backend-log-group.png)
+
+![CloudWatch metrics for AWS services](/images/5-Workshop/5.10-system-testing/cloudwatch-metrics.png)

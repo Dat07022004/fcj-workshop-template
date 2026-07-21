@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 5.12. </b> "
 ---
 
-After completing the workshop, the VibeMatch system has a frontend running on AWS Amplify, REST API access through API Gateway, a Docker backend running on EC2 Auto Scaling behind an ALB, and application data stored in Amazon DocumentDB inside private subnets. Domain, HTTPS, and WAF were configured to improve user access and frontend protection. Testing with Postman and the browser confirmed that the API, Clerk authentication, and database connection work correctly.
+After completing the workshop, the VibeMatch system has a frontend running on AWS Amplify, REST API access through API Gateway, a Docker backend running on EC2 Auto Scaling behind an ALB, and application data stored in Amazon DocumentDB inside private subnets. Domain, HTTPS, and WAF were configured to improve user access and frontend protection. Amazon CloudWatch was used to monitor logs, metrics, and alarms for the backend, ALB, EC2 Auto Scaling, API Gateway, DocumentDB, and WAF. Testing with Postman, the browser, and CloudWatch confirmed that the API, Clerk authentication, database connection, and operational status work correctly.
 
 * FCJ workshop template: https://github.com/Dat07022004/fcj-workshop-template
 
