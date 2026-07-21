@@ -52,10 +52,8 @@ Type: 404 (Rewrite)
 
 * Đăng nhập Clerk và gọi được profile/onboarding/discover.
 
-[CHÈN ẢNH: Ảnh Amplify build/deploy success]
+![Route 53 hosted zone for VibeMatch custom domain](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-01.png)
 
-[CHÈN ẢNH: Ảnh Amplify environment variables]
+![Amplify environment variables](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-02.png)
 
-[CHÈN ẢNH: Ảnh SPA rewrites and redirects]
-
-[CHÈN ẢNH: Ảnh custom domain `vibematch.cloud` đã available]
+![Amplify app deployed successfully](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-03.png)

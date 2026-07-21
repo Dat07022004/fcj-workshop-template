@@ -36,8 +36,6 @@ pre: " <b> 5.9. </b> "
 
 * Không tạo thêm Web ACL mới cho frontend nếu Amplify Firewall đã quản lý Web ACL này.
 
-[CHÈN ẢNH: Ảnh Amplify Firewall đã bật recommended protection]
+![Amplify Firewall recommended protection enabled](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-07.png)
 
-[CHÈN ẢNH: Ảnh AWS WAF Web ACL do Amplify tạo]
-
-[CHÈN ẢNH: Ảnh sampled requests hoặc dashboard WAF]
+![AWS WAF Web ACL created by Amplify](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-08.png)
