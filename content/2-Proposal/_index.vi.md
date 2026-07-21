@@ -19,7 +19,7 @@ pre: " <b> 2. </b> "
 | Phạm vi dự án | Triển khai backend, cơ sở dữ liệu, frontend, truy cập API, realtime socket, DNS, HTTPS và bảo vệ WAF trên AWS. |
 | Trạng thái hiện tại | Backend và frontend đã được triển khai và đang hoạt động cùng nhau trong môi trường AWS production. |
 
-### 1. Tóm tắt điều hành
+### 1. Tóm tắt dự án
 
 Dự án VibeMatch hướng đến việc triển khai một ứng dụng hẹn hò web hiện đại trên AWS với kiến trúc có khả năng mở rộng, bảo mật và định hướng production. Dự án bao gồm container hóa backend, triển khai cơ sở dữ liệu riêng tư, lưu trữ frontend, quản lý domain, truy cập HTTPS, định tuyến API, giao tiếp realtime socket và bảo vệ web cơ bản.
 
@@ -27,7 +27,7 @@ Backend đã được đóng gói bằng Docker và triển khai trên các EC2 
 
 Kết quả là một môi trường cloud deployment hoạt động được, thể hiện kiến thức thực tế về AWS networking, compute, database, security, monitoring, DNS và application delivery.
 
-### 2. Tuyên bố vấn đề
+### 2. Vấn đề cần giải quyết
 
 Một ứng dụng web chỉ chạy trên máy phát triển local không thể đáp ứng các yêu cầu triển khai thực tế như truy cập công khai, kết nối cơ sở dữ liệu an toàn, cấu hình domain, HTTPS, khả năng mở rộng, monitoring và bảo vệ khỏi các mối đe dọa web phổ biến. Vì vậy, dự án cần một mô hình triển khai cloud cho phép ứng dụng vận hành ổn định trong khi vẫn bảo vệ backend server và database khỏi việc bị truy cập trực tiếp từ Internet.
 

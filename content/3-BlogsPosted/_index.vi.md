@@ -15,4 +15,4 @@ Blog này giới thiệu cách xây dựng kiến trúc AIOps cho workload Amazo
 Blog này giới thiệu cách Step Functions Distributed Map xử lý object trong S3 theo prefix, đọc nội dung file với LOAD_AND_FLATTEN và mở rộng các workflow dữ liệu như phân tích log.
 
 ###  [Blog 3 - Amazon S3 Annotations](3.3-Blog3/)
-Blog này giới thiệu Amazon S3 annotations, tính năng giúp gắn ngữ cảnh có thể truy vấn trực tiếp vào object trong S3 để phục vụ analytics, data lake, media platform và AI workflow.
+Blog này giới thiệu Amazon S3 annotations, tính năng giúp gắn "ngữ cảnh" có thể truy vấn trực tiếp vào object trong S3 để phục vụ analytics, data lake, media platform và AI workflow.

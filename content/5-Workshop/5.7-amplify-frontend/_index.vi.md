@@ -52,8 +52,8 @@ Type: 404 (Rewrite)
 
 * Đăng nhập Clerk và gọi được profile/onboarding/discover.
 
-![Route 53 hosted zone for VibeMatch custom domain](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-01.png)
+![Route 53 hosted zone for vibematch.cloud](/images/5-Workshop/5.7-amplify-frontend/route53-hosted-zone.png)
 
-![Amplify environment variables](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-02.png)
+![Amplify app deployed](/images/5-Workshop/5.7-amplify-frontend/amplify-app-deployed.png)
 
-![Amplify app deployed successfully](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-03.png)
+![Amplify environment variables](/images/5-Workshop/5.7-amplify-frontend/amplify-environment-variables.png)

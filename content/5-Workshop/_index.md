@@ -6,44 +6,47 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-## Triển Khai Ứng Dụng Vibematch Trên Aws
+## Deploying The VibeMatch Application On AWS
 
 Backend Docker trên EC2 Auto Scaling, Amazon DocumentDB, API Gateway, Amplify, Route 53, ACM và WAF
 
-| Thông tin | Giá trị |
+| Information | Value |
 | --- | --- |
 | Sinh viên | Trần Thanh Hải<br>Nguyễn Thành Đạt |
 | MSSV | 2280600824<br>2280600620 |
 | Dự án | VibeMatch - Web dating application |
 | AWS Region | ap-southeast-1 (Singapore) |
-| Phạm vi workshop | Triển khai backend, database, frontend access, DNS/HTTPS, WAF và kiểm thử |
+| Workshop scope | Deploy backend, database, frontend access, DNS/HTTPS, WAF, and system testing |
+| Internship Company | Amazon Web Services Vietnam Company Limited |
+| Company Supervisor | Nguyen Gia Hung |
+| University Supervisor | M.Sc. Dao Le Thao Nguyen |
 
-> Mục tiêu: Tài liệu này mô phỏng cấu trúc workshop kiểu FCJ: overview, prerequisite, các lab triển khai, kiểm thử và cleanup. Những vị trí cần ảnh màn hình đã được đánh dấu màu đỏ để bổ sung sau.
+> Objective: This document follows an FCJ-style workshop structure: overview, prerequisites, deployment labs, testing, and cleanup.
 
-![Sơ đồ kiến trúc tổng quan VibeMatch trên AWS](/images/5-Workshop/vibematch-architecture.jpg)
+[Sơ đồ kiến trúc tổng quan VibeMatch trên AWS](/images/5-Workshop/vibematch-architecture.jpg)
 
 ## Nội dung
 
-1. [Giới thiệu workshop](5.1-introduction/)
+1. [Workshop introduction](5.1-introduction/)
 
-2. [Chuẩn bị môi trường](5.2-prerequisites/)
+2. [Environment preparation](5.2-prerequisites/)
 
-3. [Tạo VPC, subnet và network layer](5.3-network-layer/)
+3. [Create VPC, subnets, and network layer](5.3-network-layer/)
 
-4. [Tạo Amazon DocumentDB](5.4-documentdb/)
+4. [Create Amazon DocumentDB](5.4-documentdb/)
 
-5. [Deploy backend Docker lên EC2 Auto Scaling](5.5-backend-autoscaling/)
+5. [Deploy Docker backend on EC2 Auto Scaling](5.5-backend-autoscaling/)
 
-6. [Tạo API Gateway cho frontend gọi backend](5.6-api-gateway/)
+6. [Create API Gateway for frontend-to-backend access](5.6-api-gateway/)
 
-7. [Deploy frontend trên AWS Amplify](5.7-amplify-frontend/)
+7. [Deploy frontend on AWS Amplify](5.7-amplify-frontend/)
 
-8. [Cấu hình Route 53, ACM và HTTPS cho Socket.IO](5.8-route53-acm-socket/)
+8. [Configure Route 53, ACM, and HTTPS for Socket.IO](5.8-route53-acm-socket/)
 
-9. [Bật WAF cho frontend](5.9-waf/)
+9. [Enable WAF for the frontend](5.9-waf/)
 
-10. [Kiểm thử hệ thống](5.10-system-testing/)
+10. [Test the system](5.10-system-testing/)
 
-11. [Cleanup và tối ưu chi phí](5.11-cleanup-cost/)
+11. [Cleanup and cost optimization](5.11-cleanup-cost/)
 
-12. [Kết luận](5.12-conclusion/)
+12. [Conclusion](5.12-conclusion/)
