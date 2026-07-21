@@ -1,36 +1,36 @@
-﻿---
-title: "Kiểm thử hệ thống"
+---
+title: "Test the system"
 date: 2024-01-01
 weight: 10
 chapter: false
 pre: " <b> 5.10. </b> "
 ---
 
-> Kết quả cần đạt: Xác nhận frontend, REST API, backend container và DocumentDB hoạt động đúng sau khi deploy.
+> Expected result: Confirm that the frontend, REST API, backend container, and DocumentDB work correctly after deployment.
 
-## Điều kiện trước khi làm
+## Prerequisites
 
-* Có URL frontend, API Gateway URL và socket domain.
+* The frontend URL, API Gateway URL, and socket domain are available.
 
-* Có tài khoản Clerk test để lấy bearer token.
+* A Clerk test account is available to obtain a bearer token.
 
-## Các bước thực hiện
+## Implementation Steps
 
-1. Gọi health API qua API Gateway.
+1. Call the health API through API Gateway.
 
-1. Gọi DB health API để xác nhận backend kết nối DocumentDB.
+1. Call the DB health API to confirm that the backend can connect to DocumentDB.
 
-1. Dùng Postman gọi protected route thiếu token để xác nhận 401.
+1. Use Postman to call a protected route without a token and confirm it returns 401.
 
-1. Lấy Clerk bearer token từ frontend đang đăng nhập và gọi `/api/users/me`.
+1. Get the Clerk bearer token from a logged-in frontend session and call `/api/users/me`.
 
-1. Gọi onboarding/profile flow để xác nhận write/read DocumentDB.
+1. Run the onboarding/profile flow to confirm DocumentDB write/read behavior.
 
-1. Mở browser DevTools kiểm tra request frontend tới API Gateway và socket tới `socket.vibematch.cloud`.
+1. Open browser DevTools and check requests from the frontend to API Gateway and Socket.IO traffic to `socket.vibematch.cloud`.
 
-1. Kiểm tra target group health có 2 instances healthy.
+1. Check that the target group has 2 healthy instances.
 
-### Lệnh tham khảo
+### Reference Commands
 
 ```powershell
 curl.exe "https://zsc1wtu6rc.execute-api.ap-southeast-1.amazonaws.com/api/health"
@@ -38,17 +38,17 @@ curl.exe "https://zsc1wtu6rc.execute-api.ap-southeast-1.amazonaws.com/api/health
 curl.exe -H "Authorization: Bearer <clerk-token>" "https://zsc1wtu6rc.execute-api.ap-southeast-1.amazonaws.com/api/users/me"
 ```
 
-## Kiểm tra hoàn tất
+## Completion Check
 
-* `/api/health` trả 200.
+* `/api/health` returns 200.
 
-* `/api/health/db` trả connected.
+* `/api/health/db` returns connected.
 
-* Protected API có token hợp lệ hoạt động.
+* Protected APIs work with a valid token.
 
-* Frontend đăng nhập, xem profile, discover và các màn hình chính không lỗi CORS.
+* The frontend supports login, profile, discover, and main screens without CORS errors.
 
-* Postman xác nhận API backend và DB hoạt động đúng.
+* Postman confirms that the backend API and DB connection work correctly.
 
 ![VibeMatch homepage on custom domain](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-09.png)
 

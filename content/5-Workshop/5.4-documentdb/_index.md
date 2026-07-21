@@ -1,38 +1,38 @@
-﻿---
-title: "Tạo Amazon DocumentDB"
+---
+title: "Create Amazon DocumentDB"
 date: 2024-01-01
 weight: 4
 chapter: false
 pre: " <b> 5.4. </b> "
 ---
 
-> Kết quả cần đạt: Tạo DocumentDB cluster riêng tư gồm 1 writer/primary instance và 1 reader replica làm standby/failover target.
+> Expected result: Create a private DocumentDB cluster with 1 writer/primary instance and 1 reader replica as the standby/failover target.
 
-## Điều kiện trước khi làm
+## Prerequisites
 
-* Đã có private DB subnets ở 2 AZ.
+* Private database subnets are available in 2 Availability Zones.
 
-* Đã có `docdb-sg` cho phép port 27017 từ EC2 backend security group.
+* `docdb-sg` allows port 27017 from the backend EC2 security group.
 
-## Các bước thực hiện
+## Implementation Steps
 
-1. Tạo DB subnet group từ 2 private DB subnets.
+1. Create a DB subnet group from 2 private database subnets.
 
-1. Tạo cluster parameter group cho DocumentDB 5.0 và giữ TLS enabled.
+1. Create a cluster parameter group for DocumentDB 5.0 and keep TLS enabled.
 
-1. Tạo cluster `webdating-docdb` với master username dạng `webdating_admin`.
+1. Create the `webdating-docdb` cluster with a master username such as `webdating_admin`.
 
-1. Tạo writer instance trong một AZ.
+1. Create the writer instance in one Availability Zone.
 
-1. Tạo reader replica ở AZ khác để làm failover target.
+1. Create a reader replica in another Availability Zone as the failover target.
 
-1. Chờ cluster và instances chuyển sang trạng thái `available`.
+1. Wait until the cluster and instances become `available`.
 
-1. Lấy cluster endpoint và reader endpoint.
+1. Get the cluster endpoint and reader endpoint.
 
-1. Tạo secret `/webdating/backend/DATABASE_URL` trong Secrets Manager.
+1. Create the `/webdating/backend/DATABASE_URL` secret in Secrets Manager.
 
-### Lệnh tham khảo
+### Reference Commands
 
 ```powershell
 $DOCDB_ENDPOINT = "webdating-docdb.cluster-cfu04me6ymt5.ap-southeast-1.docdb.amazonaws.com"
@@ -42,14 +42,14 @@ $AWS_REGION --name "/webdating/backend/DATABASE_URL" --secret-string
 $DATABASE_URL
 ```
 
-## Kiểm tra hoàn tất
+## Completion Check
 
-* DocumentDB cluster có endpoint dạng `webdating-docdb.cluster-...ap-southeast-1.docdb.amazonaws.com`.
+* The DocumentDB cluster has an endpoint like `webdating-docdb.cluster-...ap-southeast-1.docdb.amazonaws.com`.
 
-* Có 2 instances: 1 writer và 1 reader replica.
+* There are 2 instances: 1 writer and 1 reader replica.
 
-* Security group của DocumentDB chỉ mở 27017 từ backend EC2 SG.
+* The DocumentDB security group only opens port 27017 from the backend EC2 security group.
 
-* `DATABASE_URL` có `tls=true`, `tlsCAFile`, `replicaSet=rs0`, `retryWrites=false`, `authSource=admin`, `authMechanism=SCRAM-SHA-1`.
+* `DATABASE_URL` includes `tls=true`, `tlsCAFile`, `replicaSet=rs0`, `retryWrites=false`, `authSource=admin`, and `authMechanism=SCRAM-SHA-1`.
 
-![DocumentDB cluster webdating-docdb và writer/reader instances ở trạng thái available](/images/5-Workshop/5.4-documentdb/documentdb-cluster.png)
+![DocumentDB cluster webdating-docdb with writer and reader instances available](/images/5-Workshop/5.4-documentdb/documentdb-cluster.png)

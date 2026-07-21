@@ -1,55 +1,55 @@
-﻿---
-title: "Tạo VPC, subnet và network layer"
+---
+title: "Create VPC, subnets, and network layer"
 date: 2024-01-01
 weight: 3
 chapter: false
 pre: " <b> 5.3. </b> "
 ---
 
-> Kết quả cần đạt: Tạo network tách lớp đúng yêu cầu: ALB nằm public subnet, backend EC2 nằm private app subnet, DocumentDB nằm private DB subnet.
+> Expected result: Create a layered network where the ALB is in public subnets, backend EC2 instances are in private application subnets, and DocumentDB is in private database subnets.
 
-## Điều kiện trước khi làm
+## Prerequisites
 
-* Đã chọn region `ap-southeast-1`.
+* The `ap-southeast-1` region has been selected.
 
-* Có VPC CIDR, ví dụ `10.20.0.0/16`.
+* A VPC CIDR block is available, for example `10.20.0.0/16`.
 
-## Các bước thực hiện
+## Implementation Steps
 
-1. Tạo VPC `webdating-vpc` và bật DNS support, DNS hostnames.
+1. Create the VPC `webdating-vpc` and enable DNS support and DNS hostnames.
 
-1. Tạo 2 public subnets ở 2 AZ để đặt internet-facing ALB.
+1. Create 2 public subnets in 2 Availability Zones for the internet-facing ALB.
 
-1. Tạo 2 private app subnets ở 2 AZ để Auto Scaling Group chạy EC2 backend.
+1. Create 2 private application subnets in 2 Availability Zones for backend EC2 instances managed by Auto Scaling Group.
 
-1. Tạo 2 private DB subnets ở 2 AZ để tạo DocumentDB subnet group.
+1. Create 2 private database subnets in 2 Availability Zones for the DocumentDB subnet group.
 
-1. Gắn Internet Gateway cho VPC và tạo route `0.0.0.0/0` cho public route table.
+1. Attach an Internet Gateway to the VPC and create a `0.0.0.0/0` route for the public route table.
 
-1. Tạo NAT Gateway cho private app subnets nếu cần outbound internet; với mô hình HA có thể dùng 2 NAT Gateway, mỗi AZ một NAT.
+1. Create NAT Gateway for private application subnets if outbound internet access is required. For high availability, use 2 NAT Gateways, one per AZ.
 
-1. Tạo VPC endpoints cho ECR API, ECR Docker, S3, CloudWatch Logs, SSM, SSM Messages, Secrets Manager và STS để EC2 private hoạt động ổn định.
+1. Create VPC endpoints for ECR API, ECR Docker, S3, CloudWatch Logs, SSM, SSM Messages, Secrets Manager, and STS so private EC2 instances can operate reliably.
 
-1. Tạo security groups: `alb-sg`, `ec2-backend-sg`, `docdb-sg`, `endpoint-sg`.
+1. Create security groups: `alb-sg`, `ec2-backend-sg`, `docdb-sg`, and `endpoint-sg`.
 
-## Kiểm tra hoàn tất
+## Completion Check
 
-* Public route table có route ra Internet Gateway.
+* The public route table has a route to the Internet Gateway.
 
-* Private app route table có route ra NAT Gateway hoặc đủ VPC endpoints cần thiết.
+* The private application route table has a route to NAT Gateway or enough required VPC endpoints.
 
-* `alb-sg` cho phép 80/443 từ internet.
+* `alb-sg` allows ports 80/443 from the internet.
 
-* `ec2-backend-sg` chỉ nhận port 3000 từ `alb-sg`.
+* `ec2-backend-sg` only accepts port 3000 from `alb-sg`.
 
-* `docdb-sg` chỉ nhận port 27017 từ `ec2-backend-sg`.
+* `docdb-sg` only accepts port 27017 from `ec2-backend-sg`.
 
-![VPC đã tạo và bật DNS support/hostnames](/images/5-Workshop/5.3-network-layer/vpc-details.png)
+![VPC created with DNS support and hostnames enabled](/images/5-Workshop/5.3-network-layer/vpc-details.png)
 
-![Danh sách subnets, route tables và network connections](/images/5-Workshop/5.3-network-layer/subnets-route-tables-network.png)
+![Subnets, route tables, and network connections](/images/5-Workshop/5.3-network-layer/subnets-route-tables-network.png)
 
-![NAT Gateways cho private app subnets](/images/5-Workshop/5.3-network-layer/nat-gateways.png)
+![NAT Gateways for private application subnets](/images/5-Workshop/5.3-network-layer/nat-gateways.png)
 
-![VPC endpoints đã tạo](/images/5-Workshop/5.3-network-layer/vpc-endpoints.png)
+![VPC endpoints created](/images/5-Workshop/5.3-network-layer/vpc-endpoints.png)
 
-![Security group inbound rules cho VPC endpoint](/images/5-Workshop/5.3-network-layer/endpoint-security-group.png)
+![Security group inbound rules for VPC endpoint](/images/5-Workshop/5.3-network-layer/endpoint-security-group.png)

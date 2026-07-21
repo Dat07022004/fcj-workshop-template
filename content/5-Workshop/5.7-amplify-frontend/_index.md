@@ -1,36 +1,36 @@
-﻿---
-title: "Deploy frontend trên AWS Amplify"
+---
+title: "Deploy frontend on AWS Amplify"
 date: 2024-01-01
 weight: 7
 chapter: false
 pre: " <b> 5.7. </b> "
 ---
 
-> Kết quả cần đạt: Frontend VibeMatch chạy trên Amplify Hosting, dùng custom domain và gọi backend qua API Gateway.
+> Expected result: The VibeMatch frontend runs on Amplify Hosting, uses a custom domain, and calls the backend through API Gateway.
 
-## Điều kiện trước khi làm
+## Prerequisites
 
-* Frontend build được bằng Vite/React.
+* The frontend can be built with Vite/React.
 
-* API Gateway REST endpoint đã hoạt động.
+* The API Gateway REST endpoint is working.
 
-* Socket domain HTTPS đã hoặc sẽ được cấu hình ở phần sau.
+* The HTTPS socket domain has been configured or will be configured in the next section.
 
-## Các bước thực hiện
+## Implementation Steps
 
-1. Tạo Amplify app và kết nối repository/branch frontend.
+1. Create an Amplify app and connect the frontend repository/branch.
 
-1. Cấu hình app root là `frontend` nếu project là monorepo.
+1. Configure the app root as `frontend` if the project is a monorepo.
 
-1. Thêm environment variables cho frontend.
+1. Add frontend environment variables.
 
-1. Deploy branch production/feature tương ứng.
+1. Deploy the production/feature branch.
 
-1. Cấu hình rewrite cho SPA để các route như `/discover`, `/profile` không bị 404 khi refresh.
+1. Configure SPA rewrite so routes such as `/discover` and `/profile` do not return 404 when refreshed.
 
-1. Gắn custom domain `vibematch.cloud` vào Amplify.
+1. Attach the custom domain `vibematch.cloud` to Amplify.
 
-### Lệnh tham khảo
+### Reference Configuration
 
 ```text
 VITE_API_URL=https://zsc1wtu6rc.execute-api.ap-southeast-1.amazonaws.com
@@ -42,15 +42,15 @@ Target: /index.html
 Type: 404 (Rewrite)
 ```
 
-## Kiểm tra hoàn tất
+## Completion Check
 
-* Frontend mở được bằng `https://vibematch.cloud`.
+* The frontend opens through `https://vibematch.cloud`.
 
-* Các route SPA refresh không bị 404.
+* SPA routes do not return 404 after browser refresh.
 
-* Frontend gọi API qua `VITE_API_URL` và không bị CORS.
+* The frontend calls the API through `VITE_API_URL` without CORS errors.
 
-* Đăng nhập Clerk và gọi được profile/onboarding/discover.
+* Clerk login works and profile, onboarding, and discover flows can call the backend.
 
 ![Route 53 hosted zone for vibematch.cloud](/images/5-Workshop/5.7-amplify-frontend/route53-hosted-zone.png)
 

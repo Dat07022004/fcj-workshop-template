@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Workshop"
 date: 2024-01-01
 weight: 5
@@ -8,13 +8,13 @@ pre: " <b> 5. </b> "
 
 ## Deploying The VibeMatch Application On AWS
 
-Backend Docker trên EC2 Auto Scaling, Amazon DocumentDB, API Gateway, Amplify, Route 53, ACM và WAF
+Docker backend on EC2 Auto Scaling, Amazon DocumentDB, API Gateway, Amplify, Route 53, ACM, and WAF.
 
 | Information | Value |
 | --- | --- |
-| Sinh viên | Trần Thanh Hải<br>Nguyễn Thành Đạt |
-| MSSV | 2280600824<br>2280600620 |
-| Dự án | VibeMatch - Web dating application |
+| Students | Tran Thanh Hai<br>Nguyen Thanh Dat |
+| Student IDs | 2280600824<br>2280600620 |
+| Project | VibeMatch - Web dating application |
 | Source code | [Dat07022004/webdating](https://github.com/Dat07022004/webdating) |
 | Domain | [vibematch.cloud](https://vibematch.cloud) |
 | AWS Region | ap-southeast-1 (Singapore) |
@@ -27,7 +27,7 @@ Backend Docker trên EC2 Auto Scaling, Amazon DocumentDB, API Gateway, Amplify, 
 
 ![Overall VibeMatch architecture on AWS](/images/5-Workshop/vibematch-architecture.jpg)
 
-## Nội dung
+## Contents
 
 1. [Workshop introduction](5.1-introduction/)
 
