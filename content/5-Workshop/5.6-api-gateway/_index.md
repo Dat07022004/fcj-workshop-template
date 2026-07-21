@@ -1,34 +1,34 @@
-﻿---
-title: "Tạo API Gateway cho frontend gọi backend"
+---
+title: "Create API Gateway for frontend-to-backend access"
 date: 2024-01-01
 weight: 6
 chapter: false
 pre: " <b> 5.6. </b> "
 ---
 
-> Kết quả cần đạt: Tạo HTTPS endpoint ổn định để frontend gọi REST API mà không gọi trực tiếp ALB HTTP.
+> Expected result: Create a stable HTTPS endpoint so the frontend can call REST APIs without calling the HTTP ALB directly.
 
-## Điều kiện trước khi làm
+## Prerequisites
 
-* ALB backend đã healthy.
+* The backend ALB is healthy.
 
-* Biết ALB DNS: `webdating-backend-alb-218383004.ap-southeast-1.elb.amazonaws.com`.
+* The ALB DNS is known: `webdating-backend-alb-218383004.ap-southeast-1.elb.amazonaws.com`.
 
-## Các bước thực hiện
+## Implementation Steps
 
-1. Tạo HTTP API trong API Gateway ở region `ap-southeast-1`.
+1. Create an HTTP API in API Gateway in the `ap-southeast-1` region.
 
-1. Tạo HTTP proxy integration tới `http://<alb-dns>/{proxy}`.
+1. Create an HTTP proxy integration to `http://<alb-dns>/{proxy}`.
 
-1. Tạo route `ANY /{proxy+}` trỏ tới integration.
+1. Create the route `ANY /{proxy+}` and connect it to the integration.
 
-1. Tạo route `OPTIONS /{proxy+}` để xử lý preflight nếu cần.
+1. Create the route `OPTIONS /{proxy+}` to handle preflight requests when needed.
 
-1. Cấu hình CORS cho frontend origin `https://vibematch.cloud` và `https://www.vibematch.cloud`.
+1. Configure CORS for frontend origins `https://vibematch.cloud` and `https://www.vibematch.cloud`.
 
-1. Dùng stage `$default` với auto deploy.
+1. Use the `$default` stage with auto deploy enabled.
 
-### Lệnh tham khảo
+### Reference Commands
 
 ```powershell
 $API_GATEWAY_URL = "https://zsc1wtu6rc.execute-api.ap-southeast-1.amazonaws.com"
@@ -37,18 +37,14 @@ curl.exe "$API_GATEWAY_URL/api/health/db"
 curl.exe -i -X OPTIONS "$API_GATEWAY_URL/api/users/me" -H "Origin: https://vibematch.cloud" -H "Access-Control-Request-Method: GET" -H "Access-Control-Request-Headers: Authorization,Content-Type"
 ```
 
-## Kiểm tra hoàn tất
+## Completion Check
 
-* `GET https://zsc1wtu6rc.execute-api.ap-southeast-1.amazonaws.com/api/health` trả 200.
+* `GET https://zsc1wtu6rc.execute-api.ap-southeast-1.amazonaws.com/api/health` returns 200.
 
-* Preflight `OPTIONS /api/users/me` trả CORS headers hợp lệ.
+* Preflight `OPTIONS /api/users/me` returns valid CORS headers.
 
-* Protected route thiếu token trả 401 nhưng vẫn có `access-control-allow-origin` đúng.
+* A protected route without token returns 401 while still returning the correct `access-control-allow-origin` header.
 
-[CHÈN ẢNH: Ảnh API Gateway HTTP API đã tạo]
+![API Gateway HTTP API created](/images/5-Workshop/5.6-api-gateway/api-gateway-http-api.png)
 
-[CHÈN ẢNH: Ảnh integration tới ALB]
-
-[CHÈN ẢNH: Ảnh routes ANY và OPTIONS]
-
-[CHÈN ẢNH: Ảnh CORS configuration cho `https://vibematch.cloud`]
+![ANY and OPTIONS routes for backend HTTP API](/images/5-Workshop/5.6-api-gateway/api-gateway-routes.png)

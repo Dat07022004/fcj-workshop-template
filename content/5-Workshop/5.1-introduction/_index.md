@@ -1,26 +1,26 @@
-﻿---
-title: "Giới thiệu workshop"
+---
+title: "Workshop introduction"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 5.1. </b> "
 ---
 
-Workshop này hướng dẫn triển khai ứng dụng VibeMatch lên AWS theo mô hình production-like. Backend được đóng gói bằng Docker và chạy trên EC2 private instances trong Auto Scaling Group, traffic đi qua Application Load Balancer. Database sử dụng Amazon DocumentDB trong private subnet. Frontend chạy trên AWS Amplify, truy cập backend thông qua API Gateway và domain tùy chỉnh.
+This workshop guides the deployment of the VibeMatch application on AWS using a production-like architecture. The backend is packaged with Docker and runs on private EC2 instances managed by an Auto Scaling Group. Traffic is distributed through an Application Load Balancer. The database uses Amazon DocumentDB in private subnets. The frontend runs on AWS Amplify and accesses the backend through API Gateway and a custom domain.
 
-## Dịch vụ AWS sử dụng
+## AWS Services Used
 
-| Dịch vụ | Vai trò trong hệ thống |
+| Service | Role in the system |
 | --- | --- |
-| Amazon VPC | Tách public subnet, private app subnet và private DB subnet trong cùng một network. |
-| Amazon EC2 Auto Scaling | Chạy backend container với desired capacity 2 và có thể mở rộng khi traffic tăng. |
-| Application Load Balancer | Nhận request HTTP/HTTPS và phân phối tới backend instances. |
-| Amazon ECR | Lưu Docker image backend để EC2 pull image khi khởi tạo. |
-| AWS Secrets Manager | Lưu DATABASE_URL và các biến nhạy cảm như Clerk/Cloudinary/MoMo. |
-| Amazon DocumentDB | Lưu dữ liệu ứng dụng, gồm 1 writer và 1 reader replica làm failover target. |
-| API Gateway HTTP API | Cung cấp endpoint HTTPS cho frontend gọi REST API backend. |
-| AWS Amplify | Build và host frontend, cấu hình biến môi trường production. |
-| Route 53 và ACM | Quản lý domain, DNS record và certificate HTTPS. |
-| AWS WAF | Bảo vệ frontend khỏi request độc hại thông qua Amplify Firewall. |
+| Amazon VPC | Separates public subnets, private application subnets, and private database subnets in the same network. |
+| Amazon EC2 Auto Scaling | Runs backend containers with desired capacity 2 and can scale when traffic increases. |
+| Application Load Balancer | Receives HTTP/HTTPS requests and distributes traffic to backend instances. |
+| Amazon ECR | Stores the backend Docker image so EC2 instances can pull it at startup. |
+| AWS Secrets Manager | Stores DATABASE_URL and sensitive variables such as Clerk, Cloudinary, and MoMo credentials. |
+| Amazon DocumentDB | Stores application data with one writer and one reader replica for failover. |
+| API Gateway HTTP API | Provides an HTTPS endpoint for the frontend to call backend REST APIs. |
+| AWS Amplify | Builds and hosts the frontend and manages production environment variables. |
+| Route 53 and ACM | Manage domains, DNS records, and HTTPS certificates. |
+| AWS WAF | Protects the frontend from malicious requests through Amplify Firewall. |
 
-[CHÈN ẢNH: Ảnh sơ đồ kiến trúc frontend, API Gateway, ALB, EC2 Auto Scaling, DocumentDB và WAF]
+![Frontend, API Gateway, ALB, EC2 Auto Scaling, DocumentDB, and WAF architecture](/images/5-Workshop/5.1-introduction/architecture-overview.jpg)

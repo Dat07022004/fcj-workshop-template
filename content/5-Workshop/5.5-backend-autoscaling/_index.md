@@ -1,42 +1,42 @@
-﻿---
-title: "Deploy backend Docker lên EC2 Auto Scaling"
+---
+title: "Deploy Docker backend on EC2 Auto Scaling"
 date: 2024-01-01
 weight: 5
 chapter: false
 pre: " <b> 5.5. </b> "
 ---
 
-> Kết quả cần đạt: Backend container chạy trên 2 EC2 private instances, tự khởi tạo bằng Launch Template user data và được ALB phân phối traffic.
+> Expected result: The backend container runs on 2 private EC2 instances, initializes automatically through Launch Template user data, and receives traffic through the ALB.
 
-## Điều kiện trước khi làm
+## Prerequisites
 
-* Backend có Dockerfile hoạt động.
+* The backend has a working Dockerfile.
 
-* ECR repository đã tạo và image đã push lên ECR.
+* The ECR repository has been created and the image has been pushed to ECR.
 
-* Secrets Manager đã có các biến môi trường backend.
+* Secrets Manager contains the backend environment variables.
 
-* DocumentDB đã available.
+* DocumentDB is available.
 
-## Các bước thực hiện
+## Implementation Steps
 
-1. Build backend image từ thư mục backend.
+1. Build the backend image from the backend directory.
 
-1. Login ECR và push image `webdating-backend:latest`.
+1. Log in to ECR and push the `webdating-backend:latest` image.
 
-1. Tạo IAM role/profile cho EC2 có quyền pull ECR, đọc Secrets Manager, ghi CloudWatch Logs và dùng SSM Session Manager.
+1. Create an IAM role/profile for EC2 with permission to pull from ECR, read Secrets Manager, write CloudWatch Logs, and use SSM Session Manager.
 
-1. Viết `user-data.sh`: cài Docker, tải `global-bundle.pem`, đọc secrets, login ECR, pull image và chạy container `webdating-backend`.
+1. Write `user-data.sh`: install Docker, download `global-bundle.pem`, read secrets, log in to ECR, pull the image, and run the `webdating-backend` container.
 
-1. Tạo Launch Template dùng Amazon Linux 2023, IAM instance profile, security group backend và user data.
+1. Create a Launch Template using Amazon Linux 2023, IAM instance profile, backend security group, and user data.
 
-1. Tạo target group port 3000 với health check path `/api/health`.
+1. Create a target group on port 3000 with health check path `/api/health`.
 
-1. Tạo Application Load Balancer trong 2 public subnets.
+1. Create an Application Load Balancer in 2 public subnets.
 
-1. Tạo Auto Scaling Group trong 2 private app subnets, desired/min/max ban đầu `2/2/4`.
+1. Create an Auto Scaling Group in 2 private application subnets with initial desired/min/max capacity `2/2/4`.
 
-### Lệnh tham khảo
+### Reference Commands
 
 ```powershell
 docker build -t webdating-backend:latest ./backend
@@ -49,24 +49,22 @@ curl.exe "http://webdating-backend-alb-218383004.ap-southeast-1.elb.amazonaws.co
 curl.exe "http://webdating-backend-alb-218383004.ap-southeast-1.elb.amazonaws.com/api/health/db"
 ```
 
-## Kiểm tra hoàn tất
+## Completion Check
 
-* Target group có 2 targets healthy.
+* The target group has 2 healthy targets.
 
-* `GET /api/health` trả `{"message":"OK"}`.
+* `GET /api/health` returns `{"message":"OK"}`.
 
-* `GET /api/health/db` trả `Database connection is healthy` và `state=connected`.
+* `GET /api/health/db` returns `Database connection is healthy` and `state=connected`.
 
-* Docker container `webdating-backend` chạy ổn định, không restart loop.
+* The Docker container `webdating-backend` runs stably without a restart loop.
 
-[CHÈN ẢNH: Ảnh ECR repository có image backend latest]
+![ECR repository with latest backend image](/images/5-Workshop/5.5-backend-autoscaling/ecr-repository.png)
 
-[CHÈN ẢNH: Ảnh IAM role và instance profile của EC2]
+![Backend EC2 instance in private subnet AZ A](/images/5-Workshop/5.5-backend-autoscaling/backend-ec2-instance-a.png)
 
-[CHÈN ẢNH: Ảnh Launch Template đã tạo]
+![Backend EC2 instance in private subnet AZ B](/images/5-Workshop/5.5-backend-autoscaling/backend-ec2-instance-b.png)
 
-[CHÈN ẢNH: Ảnh Auto Scaling Group desired capacity 2]
+![Launch Template created for backend](/images/5-Workshop/5.5-backend-autoscaling/launch-template.png)
 
-[CHÈN ẢNH: Ảnh Target Group có 2 EC2 healthy]
-
-[CHÈN ẢNH: Ảnh log Docker backend kết nối DocumentDB thành công]
+![Auto Scaling Group desired capacity 2](/images/5-Workshop/5.5-backend-autoscaling/auto-scaling-group.png)

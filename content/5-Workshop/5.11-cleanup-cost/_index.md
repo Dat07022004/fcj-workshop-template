@@ -1,26 +1,24 @@
-﻿---
-title: "Cleanup và tối ưu chi phí"
+---
+title: "Cleanup and cost optimization"
 date: 2024-01-01
 weight: 11
 chapter: false
 pre: " <b> 5.11. </b> "
 ---
 
-Sau khi hoàn tất demo hoặc test, cần tạm dừng các tài nguyên tính phí theo giờ để tránh vượt credit. Các tài nguyên đáng chú ý gồm DocumentDB instances, NAT Gateway, VPC interface endpoints, EC2 instances, ALB và WAF.
+After the demo or testing phase is complete, hourly billed resources should be paused or removed to avoid exceeding credits. Important cost-related resources include DocumentDB instances, NAT Gateway, VPC interface endpoints, EC2 instances, ALB, and WAF.
 
-| Tài nguyên | Cách tiết kiệm chi phí |
+| Resource | Cost optimization approach |
 | --- | --- |
-| EC2 Auto Scaling | Set desired/min capacity về 0 khi không cần chạy backend. |
-| DocumentDB | Stop cluster khi không dùng; snapshot trước khi xóa nếu cần giữ dữ liệu. |
-| NAT Gateway | Xóa NAT Gateway nếu workshop đã kết thúc; NAT tính phí theo giờ và data processed. |
-| VPC endpoints | Xóa interface endpoints không dùng nếu đã dừng backend lâu dài. |
-| ALB/API Gateway/WAF | Giữ khi cần demo public; xóa nếu kết thúc môi trường thực tập. |
+| EC2 Auto Scaling | Set desired/min capacity to 0 when the backend does not need to run. |
+| DocumentDB | Stop the cluster when unused; create a snapshot before deletion if data must be retained. |
+| NAT Gateway | Delete NAT Gateway when the workshop is complete because NAT is billed hourly and by data processed. |
+| VPC endpoints | Delete unused interface endpoints if the backend will be stopped for a long period. |
+| ALB/API Gateway/WAF | Keep them only when a public demo is needed; delete them when the internship environment is finished. |
 
 ```powershell
 aws autoscaling update-auto-scaling-group --region ap-southeast-1 --auto-scaling-group-name webdating-backend-asg --min-size 0 --desired-capacity 0
 aws docdb stop-db-cluster --region ap-southeast-1 --db-cluster-identifier webdating-docdb
 ```
 
-[CHÈN ẢNH: Ảnh Cost Explorer/Billing sau khi theo dõi chi phí]
-
-[CHÈN ẢNH: Ảnh Auto Scaling Group đã scale về 0 khi tạm dừng]
+![Billing and Cost Management summary](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-16.png)

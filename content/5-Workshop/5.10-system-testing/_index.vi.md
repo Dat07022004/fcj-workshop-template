@@ -50,10 +50,16 @@ curl.exe -H "Authorization: Bearer <clerk-token>" "https://zsc1wtu6rc.execute-ap
 
 * Postman xác nhận API backend và DB hoạt động đúng.
 
-[CHÈN ẢNH: Ảnh Postman test `/api/health` và `/api/health/db` thành công]
+![VibeMatch homepage on custom domain](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-09.png)
 
-[CHÈN ẢNH: Ảnh Postman protected route với Bearer token thành công]
+![VibeMatch notifications page](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-10.png)
 
-[CHÈN ẢNH: Ảnh frontend chạy trên `https://vibematch.cloud`]
+![VibeMatch matches page](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-11.png)
 
-[CHÈN ẢNH: Ảnh target group có 2 healthy targets]
+![VibeMatch match detail test](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-12.png)
+
+![VibeMatch messaging page](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-13.png)
+
+![VibeMatch video call test](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-14.png)
+
+![VibeMatch profile page](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-15.png)

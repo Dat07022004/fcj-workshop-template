@@ -14,19 +14,20 @@ pre: " <b> 5.2. </b> "
 
 1. Cài AWS CLI và cấu hình profile bằng lệnh `aws configure`.
 
-1. Chuẩn bị source code backend/frontend của dự án VibeMatch.
+1. Chuẩn bị source code backend/frontend của dự án VibeMatch từ repository [Dat07022004/webdating](https://github.com/Dat07022004/webdating).
 
 1. Chuẩn bị Docker để build backend image.
 
 1. Chuẩn bị Clerk project để lấy publishable key, secret key và bearer token khi test protected API.
 
-1. Chuẩn bị domain `vibematch.cloud` hoặc domain tương ứng nếu dùng custom domain.
+1. Chuẩn bị domain [vibematch.cloud](https://vibematch.cloud) hoặc domain tương ứng nếu dùng custom domain.
 
 ### Lệnh tham khảo
 
 ```powershell
 $AWS_REGION = "ap-southeast-1"
 $APP_NAME = "webdating"
+git clone https://github.com/Dat07022004/webdating.git
 aws sts get-caller-identity
 docker --version
 ```
@@ -39,8 +40,3 @@ docker --version
 
 * Có quyền truy cập AWS Console và có thể tạo service trong region `ap-southeast-1`.
 
-[CHÈN ẢNH: Ảnh AWS CLI đã cấu hình thành công]
-
-[CHÈN ẢNH: Ảnh Docker build backend image]
-
-[CHÈN ẢNH: Ảnh Clerk dashboard hoặc phần key dùng cho môi trường test]

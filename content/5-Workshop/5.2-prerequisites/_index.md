@@ -1,46 +1,42 @@
-﻿---
-title: "Chuẩn bị môi trường"
+---
+title: "Environment preparation"
 date: 2024-01-01
 weight: 2
 chapter: false
 pre: " <b> 5.2. </b> "
 ---
 
-> Kết quả cần đạt: Có đủ công cụ và thông tin đầu vào để thực hiện các lab triển khai AWS.
+> Expected result: All required tools and input information are ready for the AWS deployment labs.
 
-## Các bước thực hiện
+## Implementation Steps
 
-1. Đăng nhập AWS Console bằng tài khoản có quyền quản trị các dịch vụ VPC, EC2, ECR, DocumentDB, API Gateway, Amplify, Route 53, ACM, WAF và Secrets Manager.
+1. Sign in to the AWS Console with an account that can manage VPC, EC2, ECR, DocumentDB, API Gateway, Amplify, Route 53, ACM, WAF, and Secrets Manager.
 
-1. Cài AWS CLI và cấu hình profile bằng lệnh `aws configure`.
+1. Install AWS CLI and configure the profile with `aws configure`.
 
-1. Chuẩn bị source code backend/frontend của dự án VibeMatch.
+1. Prepare the backend/frontend source code of the VibeMatch project from [Dat07022004/webdating](https://github.com/Dat07022004/webdating).
 
-1. Chuẩn bị Docker để build backend image.
+1. Prepare Docker to build the backend image.
 
-1. Chuẩn bị Clerk project để lấy publishable key, secret key và bearer token khi test protected API.
+1. Prepare the Clerk project to get the publishable key, secret key, and bearer token for testing protected APIs.
 
-1. Chuẩn bị domain `vibematch.cloud` hoặc domain tương ứng nếu dùng custom domain.
+1. Prepare the domain [vibematch.cloud](https://vibematch.cloud), or another domain if a custom domain is used.
 
-### Lệnh tham khảo
+### Reference Commands
 
 ```powershell
 $AWS_REGION = "ap-southeast-1"
 $APP_NAME = "webdating"
+git clone https://github.com/Dat07022004/webdating.git
 aws sts get-caller-identity
 docker --version
 ```
 
-## Kiểm tra hoàn tất
+## Completion Check
 
-* Chạy được `aws sts get-caller-identity` và nhìn thấy Account ID.
+* `aws sts get-caller-identity` runs successfully and returns the Account ID.
 
-* Build backend image thành công trên máy local.
+* The backend image can be built successfully on the local machine.
 
-* Có quyền truy cập AWS Console và có thể tạo service trong region `ap-southeast-1`.
+* AWS Console access is available and services can be created in the `ap-southeast-1` region.
 
-[CHÈN ẢNH: Ảnh AWS CLI đã cấu hình thành công]
-
-[CHÈN ẢNH: Ảnh Docker build backend image]
-
-[CHÈN ẢNH: Ảnh Clerk dashboard hoặc phần key dùng cho môi trường test]

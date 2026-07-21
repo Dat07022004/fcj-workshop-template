@@ -40,10 +40,8 @@ pre: " <b> 5.8. </b> "
 
 * Socket.IO nên ưu tiên WebSocket transport hoặc bật ALB stickiness nếu vẫn dùng polling.
 
-[CHÈN ẢNH: Ảnh Route 53 record `socket.vibematch.cloud` alias tới ALB]
+![Route 53 records for vibematch.cloud](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-04.png)
 
-[CHÈN ẢNH: Ảnh ACM certificate ở trạng thái Issued]
+![ACM certificate issued](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-05.png)
 
-[CHÈN ẢNH: Ảnh ALB listener HTTPS 443 gắn certificate]
-
-[CHÈN ẢNH: Ảnh frontend không còn Mixed Content]
+![ALB HTTPS listener configuration](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-06.png)

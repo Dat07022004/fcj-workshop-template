@@ -21,6 +21,4 @@ aws autoscaling update-auto-scaling-group --region ap-southeast-1 --auto-scaling
 aws docdb stop-db-cluster --region ap-southeast-1 --db-cluster-identifier webdating-docdb
 ```
 
-[CHÈN ẢNH: Ảnh Cost Explorer/Billing sau khi theo dõi chi phí]
-
-[CHÈN ẢNH: Ảnh Auto Scaling Group đã scale về 0 khi tạm dừng]
+![Billing and Cost Management summary](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-16.png)

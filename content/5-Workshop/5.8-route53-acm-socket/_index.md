@@ -1,49 +1,47 @@
-﻿---
-title: "Cấu hình Route 53, ACM và HTTPS cho Socket.IO"
+---
+title: "Configure Route 53, ACM, and HTTPS for Socket.IO"
 date: 2024-01-01
 weight: 8
 chapter: false
 pre: " <b> 5.8. </b> "
 ---
 
-> Kết quả cần đạt: Tạo domain HTTPS riêng cho Socket.IO vì frontend chạy HTTPS không được gọi socket HTTP.
+> Expected result: Create a dedicated HTTPS domain for Socket.IO because an HTTPS frontend cannot call an HTTP socket endpoint.
 
-## Điều kiện trước khi làm
+## Prerequisites
 
-* Domain `vibematch.cloud` đã trỏ nameserver về Route 53.
+* The `vibematch.cloud` domain nameservers point to Route 53.
 
-* ALB backend đã có target group healthy.
+* The backend ALB already has a healthy target group.
 
-## Các bước thực hiện
+## Implementation Steps
 
-1. Tạo hosted zone hoặc dùng hosted zone hiện có cho `vibematch.cloud`.
+1. Create a hosted zone or use the existing hosted zone for `vibematch.cloud`.
 
-1. Tạo record `socket.vibematch.cloud` kiểu A Alias trỏ tới ALB.
+1. Create an A Alias record `socket.vibematch.cloud` pointing to the ALB.
 
-1. Request ACM certificate cho `socket.vibematch.cloud` trong region `ap-southeast-1`.
+1. Request an ACM certificate for `socket.vibematch.cloud` in the `ap-southeast-1` region.
 
-1. Validate certificate bằng DNS record trong Route 53.
+1. Validate the certificate using the DNS record in Route 53.
 
-1. Tạo HTTPS listener port 443 trên ALB và gắn ACM certificate.
+1. Create an HTTPS listener on port 443 for the ALB and attach the ACM certificate.
 
-1. Forward listener 443 về target group backend port 3000.
+1. Forward listener 443 to the backend target group on port 3000.
 
-1. Mở inbound 443 trên ALB security group.
+1. Open inbound port 443 on the ALB security group.
 
-1. Cập nhật frontend `VITE_SOCKET_URL=https://socket.vibematch.cloud` và redeploy Amplify.
+1. Update the frontend variable `VITE_SOCKET_URL=https://socket.vibematch.cloud` and redeploy Amplify.
 
-## Kiểm tra hoàn tất
+## Completion Check
 
-* `curl.exe -i https://socket.vibematch.cloud/api/health` trả 200 khi target group healthy.
+* `curl.exe -i https://socket.vibematch.cloud/api/health` returns 200 when the target group is healthy.
 
-* Browser không còn lỗi Mixed Content với Socket.IO.
+* The browser no longer shows Mixed Content errors for Socket.IO.
 
-* Socket.IO nên ưu tiên WebSocket transport hoặc bật ALB stickiness nếu vẫn dùng polling.
+* Socket.IO should prioritize WebSocket transport, or ALB stickiness should be enabled if polling is still used.
 
-[CHÈN ẢNH: Ảnh Route 53 record `socket.vibematch.cloud` alias tới ALB]
+![Route 53 records for vibematch.cloud](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-04.png)
 
-[CHÈN ẢNH: Ảnh ACM certificate ở trạng thái Issued]
+![ACM certificate issued](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-05.png)
 
-[CHÈN ẢNH: Ảnh ALB listener HTTPS 443 gắn certificate]
-
-[CHÈN ẢNH: Ảnh frontend không còn Mixed Content]
+![ALB HTTPS listener configuration](/images/5-Workshop/5.7-5.11-frontend/workshop-frontend-06.png)

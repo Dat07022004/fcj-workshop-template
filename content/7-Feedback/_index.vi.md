@@ -5,40 +5,20 @@ weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
->Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud AI Journey, giúp team FCAJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau:
 
 ### Đánh giá chung
 
 **1. Môi trường làm việc**  
-Môi trường làm việc rất thân thiện và cởi mở. Các thành viên trong FCAJ luôn sẵn sàng hỗ trợ khi mình gặp khó khăn, kể cả ngoài giờ làm việc. Không gian làm việc gọn gàng, thoải mái, giúp mình tập trung tốt hơn. Tuy nhiên, mình nghĩ có thể bổ sung thêm một số buổi giao lưu hoặc team bonding để mọi người hiểu nhau hơn.
+Môi trường làm việc trong chương trình FCAJ rất thân thiện và cởi mở. Các thành viên cũng như các anh chị admin luôn sẵn sàng hỗ trợ khi mình gặp khó khăn trong quá trình học tập và thực hành. Không gian làm việc gọn gàng, thoải mái, giúp mình có thêm tinh thần để tập trung hoàn thành các nội dung được giao.
 
 **2. Sự hỗ trợ của mentor / team admin**  
-Mentor hướng dẫn rất chi tiết, giải thích rõ ràng khi mình chưa hiểu và luôn khuyến khích mình đặt câu hỏi. Team admin hỗ trợ các thủ tục, tài liệu và tạo điều kiện để mình làm việc thuận lợi. Mình đánh giá cao việc mentor cho phép mình thử và tự xử lý vấn đề thay vì chỉ đưa đáp án.
+Các anh chị admin hướng dẫn rất chi tiết, giải thích rõ ràng khi mình chưa hiểu và luôn khuyến khích mình chủ động đặt câu hỏi. Team admin cũng hỗ trợ tốt về thủ tục, tài liệu và tạo điều kiện để mình làm việc thuận lợi hơn. Mình đánh giá cao việc các anh chị cho phép mình tự thử, tự tìm hiểu và tự xử lý vấn đề trước khi đưa ra hướng dẫn cụ thể.
 
-**3. Sự phù hợp giữa công việc và chuyên ngành học**  
-Công việc mình được giao phù hợp với kiến thức mình đã học ở trường, đồng thời mở rộng thêm những mảng mới mà mình chưa từng được tiếp cận. Nhờ vậy, mình vừa củng cố kiến thức nền tảng, vừa học thêm kỹ năng thực tế.
+**3. Cơ hội học hỏi & phát triển kỹ năng**  
+Trong quá trình thực tập, mình học được thêm nhiều kỹ năng mới như tìm hiểu tài liệu kỹ thuật, quản lý tiến độ công việc, làm việc nhóm và giao tiếp trong môi trường chuyên nghiệp. Bên cạnh đó, các anh chị cũng chia sẻ nhiều kinh nghiệm thực tế, giúp mình có thêm góc nhìn rõ hơn về định hướng học tập và nghề nghiệp sau này.
 
-**4. Cơ hội học hỏi & phát triển kỹ năng**  
-Trong quá trình thực tập, mình học được nhiều kỹ năng mới như sử dụng công cụ quản lý dự án, kỹ năng làm việc nhóm, và cả cách giao tiếp chuyên nghiệp trong môi trường công ty. Mentor cũng chia sẻ nhiều kinh nghiệm thực tế giúp mình định hướng tốt hơn cho sự nghiệp.
+**4. Văn hóa & tinh thần đồng đội**  
+Văn hóa làm việc rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn giữ tinh thần vui vẻ và cởi mở. Khi có vấn đề cần xử lý, mọi người luôn sẵn sàng hỗ trợ nhau, không phân biệt vai trò hay vị trí. Điều này giúp mình cảm thấy được hòa nhập vào tập thể dù chỉ là thực tập sinh.
 
-**5. Văn hóa & tinh thần đồng đội**  
-Văn hóa công ty rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn vui vẻ. Khi có dự án gấp, mọi người cùng nhau cố gắng, hỗ trợ không phân biệt vị trí. Điều này giúp mình cảm thấy mình là một phần của tập thể, dù chỉ là thực tập sinh.
-
-**6. Chính sách / phúc lợi cho thực tập sinh**  
-Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về thời gian linh hoạt khi cần thiết. Ngoài ra, việc được tham gia các buổi đào tạo nội bộ là một điểm cộng lớn.
-
-
-### Một số câu hỏi khác
-- Điều bạn **hài lòng nhất** trong thời gian thực tập?  
-- Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?  
-- Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
-
-
-### Đề xuất & mong muốn
-- Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?  
-- Bạn có muốn tiếp tục chương trình này trong tương lai?
-- Góp ý khác (tự do chia sẻ):
+**5. Lời cảm ơn**  
+Cuối cùng, mình xin gửi lời cảm ơn chân thành đến các anh chị admin, mentor và thầy cô đã tạo ra một môi trường thuận lợi để mình học hỏi trong thời gian thực tập vừa qua. Nhờ sự hỗ trợ và hướng dẫn của mọi người, mình đã tích lũy thêm được nhiều kiến thức, kỹ năng và kinh nghiệm thực tế. Chúc các anh chị và thầy cô luôn nhiều sức khỏe, niềm vui và gặt hái được nhiều thành công trong tương lai.
