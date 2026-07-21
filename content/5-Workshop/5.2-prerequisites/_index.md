@@ -14,19 +14,20 @@ pre: " <b> 5.2. </b> "
 
 1. Install AWS CLI and configure the profile with `aws configure`.
 
-1. Prepare the backend/frontend source code of the VibeMatch project.
+1. Prepare the backend/frontend source code of the VibeMatch project from [Dat07022004/webdating](https://github.com/Dat07022004/webdating).
 
 1. Prepare Docker to build the backend image.
 
 1. Prepare the Clerk project to get the publishable key, secret key, and bearer token for testing protected APIs.
 
-1. Prepare the domain `vibematch.cloud`, or another domain if a custom domain is used.
+1. Prepare the domain [vibematch.cloud](https://vibematch.cloud), or another domain if a custom domain is used.
 
 ### Reference Commands
 
 ```powershell
 $AWS_REGION = "ap-southeast-1"
 $APP_NAME = "webdating"
+git clone https://github.com/Dat07022004/webdating.git
 aws sts get-caller-identity
 docker --version
 ```

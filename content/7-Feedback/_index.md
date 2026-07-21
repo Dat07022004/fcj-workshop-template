@@ -6,25 +6,19 @@ chapter: false
 pre: " <b> 7. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
-
-> Here, you can freely share your personal opinions about your experience participating in the First Cloud AI Journey program. This will help the FCAJ team improve any shortcomings based on the following aspects:
-
 ### Overall Evaluation
 
 **1. Working Environment**  
-The working environment is very friendly and open. FCAJ members are always willing to help whenever I encounter difficulties, even outside working hours. The workspace is tidy and comfortable, helping me focus better. However, I think it would be nice to have more social gatherings or team bonding activities to strengthen relationships.
+The working environment in the FCAJ program was friendly, open, and comfortable for interns. The members and admin team were always willing to support me whenever I faced difficulties during learning, practice, or report preparation. The workspace was organized and professional without feeling overly stressful, which helped me focus better on the tasks I needed to complete.
 
-**2. Support from Mentor / Team Admin**  
-The mentor provides very detailed guidance, explains clearly when I don’t understand, and always encourages me to ask questions. The admin team supports administrative tasks, provides necessary documents, and creates favorable conditions for me to work effectively. I especially appreciate that the mentor allows me to try and solve problems myself instead of just giving the answer.
+**2. Support from Mentor / Admin Team**  
+The admin team provided detailed guidance, explained clearly when I did not fully understand something, and encouraged me to ask questions proactively. They also supported administrative procedures, shared necessary documents, and created favorable conditions for me to complete my work more smoothly. I especially appreciated that they did not simply give direct answers, but encouraged me to try, research, and solve problems on my own first.
 
-**3. Relevance of Work to Academic Major**  
-The tasks I was assigned align well with the knowledge I learned at university, while also introducing me to new areas I had never encountered before. This allowed me to both strengthen my foundational knowledge and gain practical skills.
+**3. Learning Opportunities and Skill Development**  
+During the internship, I had the opportunity to learn many new skills, especially self-learning, reading technical documentation, teamwork, progress management, and professional communication. In addition to AWS Cloud knowledge, the team also shared practical experience that helped me better understand my future learning and career direction.
 
-**4. Company Culture & Team Spirit**  
-The company culture is very positive: everyone respects each other, works seriously but still keeps things enjoyable. When there are urgent projects, everyone works together and supports one another regardless of their position. This made me feel like a real part of the team, even as an intern.
+**4. Culture and Team Spirit**  
+The working culture in the program was very positive. Everyone respected one another, worked seriously, and still maintained an open and cheerful atmosphere. When problems occurred or urgent tasks needed to be completed, people were willing to support each other regardless of role or position. This helped me feel included in the team and gave me more motivation throughout the internship.
 
----
-
+**5. Appreciation**  
+Finally, I would like to sincerely thank the admin team, mentors, and teachers for creating a supportive learning environment and accompanying me throughout the internship. Thanks to everyone’s guidance and support, I gained valuable knowledge, skills, and practical experience. I wish the team and teachers good health, happiness, and continued success in the future.
