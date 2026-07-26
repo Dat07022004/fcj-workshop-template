@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
-During my internship, I participated in one community event related to AWS Cloud, Artificial Intelligence, DevOps, AI Agents, and modern technology trends. The event helped me broaden my perspective on how Cloud and AI can be applied in real enterprise systems, especially in building Voice Agents and automating DevOps workflows.
+During my internship, I participated in community events related to AWS Cloud, Artificial Intelligence, DevOps, AI Agents, and modern technology trends. These events helped me broaden my perspective on how Cloud and AI can be applied in real enterprise systems, especially in building Voice Agents, automating DevOps workflows, and developing Agentic AI products.
 
 ### [Event 1 - FCAJ Community Day - June 2026](4.1-Event1/)
 
@@ -21,3 +21,17 @@ During my internship, I participated in one community event related to AWS Cloud
 &emsp;**Role:** Participant
 
 &emsp;**Highlights:** Building Voice Agent at Scale, AWS DevOps Agent, AI Agents, and DevOps Automation
+
+### [Event 2 - FCAJ Agentic AI Build Week](4.2-Event2/)
+
+&emsp;**Event Name:** FCAJ - Agentic AI Build Week
+
+&emsp;**Theme:** Agentic AI projects, pitching
+
+&emsp;**Time:** 09:00 - 12:00, July 25, 2026
+
+&emsp;**Location:** 26th floor, Bitexco Financial Tower
+
+&emsp;**Role:** Participant
+
+&emsp;**Highlights:** Observing Agentic AI projects, team pitching sessions, and practical applications of AI agents
